@@ -8,18 +8,20 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " plugins
 Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
-Plugin 'c.vim'   "C-Support
 Plugin 'cpp.vim' "Qt
-Plugin 'valloric/youcompleteme'
 Plugin 'craigemery/vim-autotag'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'restore_view.vim'
+Plugin 'docteurklein/vim-symfony'
+"Plugin 'stanangeloff/php.vim'
+Plugin 'mattn/emmet-vim'
+"Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,12 +38,15 @@ filetype plugin indent on    " required
 
 
 
-:let mapleader = ","
-:command NE NERDTree
-:nnoremap <leader>f gg=G
+let mapleader = ","
+command NE NERDTree
+nnoremap <leader>f mxgg=G'x
+inoremap <leader>ff <Esc>gg=Gi
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 vnoremap <leader>p "_dP
+inoremap <leader>; <C-o>A;
+nnoremap <leader>; A;<Esc>
 set number
 set pastetoggle=<F2>
 set tabstop=4
@@ -52,3 +57,5 @@ let &t_ti.="\e[?7727h"
 let &t_te.="\e[?7727l"
 noremap <Esc>O[ <Esc>
 noremap! <Esc>O[ <C-c>
+set hlsearch
+set foldmethod=syntax
