@@ -21,6 +21,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'noah/vim256-color'
 Plugin 'itchyny/lightline.vim'
+Plugin 'yonchu/accelerated-smooth-scroll'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -64,3 +65,4 @@ if &term =~ '256color'
     set t_ut=
 endif
 set laststatus=2
+set esckeys
