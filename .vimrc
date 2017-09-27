@@ -17,11 +17,10 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'restore_view.vim'
 Plugin 'docteurklein/vim-symfony'
-"Plugin 'stanangeloff/php.vim'
 Plugin 'mattn/emmet-vim'
-"Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-surround'
+Plugin 'noah/vim256-color'
+Plugin 'itchyny/lightline.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,21 +40,27 @@ filetype plugin indent on    " required
 let mapleader = ","
 command NE NERDTree
 nnoremap <leader>f mxgg=G'x
-inoremap <leader>ff <Esc>gg=Gi
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 vnoremap <leader>p "_dP
-inoremap <leader>; <C-o>A;
 nnoremap <leader>; A;<Esc>
 set number
 set pastetoggle=<F2>
 set tabstop=4
 set shiftwidth=4
 set expandtab
-colorscheme elflord
+colorscheme atom-dark-256
 let &t_ti.="\e[?7727h"
 let &t_te.="\e[?7727l"
 noremap <Esc>O[ <Esc>
 noremap! <Esc>O[ <C-c>
 set hlsearch
+set incsearch
 set foldmethod=syntax
+if &term =~ '256color'
+    " disable Background Color Erase (BCE) so that color schemes
+    " render properly when inside 256-color tmux and GNU screen.
+    " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+    set t_ut=
+endif
+set laststatus=2
