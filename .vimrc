@@ -23,6 +23,7 @@ Plugin 'noah/vim256-color'
 Plugin 'itchyny/lightline.vim'
 Plugin 'yonchu/accelerated-smooth-scroll'
 
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -53,8 +54,6 @@ set expandtab
 colorscheme atom-dark-256
 let &t_ti.="\e[?7727h"
 let &t_te.="\e[?7727l"
-noremap <Esc>O[ <Esc>
-noremap! <Esc>O[ <C-c>
 set hlsearch
 set incsearch
 set foldmethod=syntax
@@ -65,4 +64,6 @@ if &term =~ '256color'
     set t_ut=
 endif
 set laststatus=2
-set esckeys
+set ttimeoutlen=50
+set foldlevelstart=20
+set scrolloff=3
